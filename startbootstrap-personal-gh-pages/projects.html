@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Projects - My Portfolio</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Project Card Styles */
+            .project-card {
+                width: 100%;
+                margin-bottom: 40px;
+                transition: all 0.3s ease;
+                border: none;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+            .project-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            }
+            
+            /* Card Header Styles */
+            .card-header {
+                background: linear-gradient(to right, #f8f9fa, white);
+                border-bottom: 2px solid #e9ecef;
+                padding: 1.25rem;
+            }
+            .card-header h5 {
+                margin: 0;
+                color: #2d3436;
+                font-weight: 600;
+            }
+
+            /* Carousel Styles */
+            .carousel-item img {
+                width: 100%;
+                height: 350px;
+                object-fit: contain;
+                border-radius: 8px;
+                background-color: #ffffff;
+                padding: 15px;
+                transition: all 0.3s ease;
+                border: 1px solid #e2e8f0;
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+            }
+            .carousel-item {
+                background-color: #f1f5f9;
+                border-radius: 8px;
+                padding: 10px;
+            }
+            .carousel-item img:hover {
+                background-color: #f8fafc;
+                border-color: #cbd5e1;
+            }
+            
+            /* Carousel Controls */
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 8%;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 50%;
+                padding: 25px;
+                transition: all 0.3s ease;
+            }
+            .carousel-control-prev:hover .carousel-control-prev-icon,
+            .carousel-control-next:hover .carousel-control-next-icon {
+                background-color: rgba(0, 0, 0, 0.9);
+                transform: scale(1.1);
+            }
+            .project-card:hover .carousel-control-prev,
+            .project-card:hover .carousel-control-next {
+                opacity: 1;
+            }
+
+            /* Carousel Indicators */
+            .carousel-indicators {
+                margin-bottom: -1.5rem;
+            }
+            .carousel-indicators button {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                margin: 0 5px;
+                background-color: rgba(0, 0, 0, 0.5);
+                transition: all 0.3s ease;
+            }
+            .carousel-indicators button.active {
+                background-color: #0d6efd;
+                transform: scale(1.2);
+            }
+
+            /* Year Section Styles */
+            .year-section {
+                margin-bottom: 60px;
+                position: relative;
+            }
+            .year-title {
+                margin-bottom: 25px;
+                color: #0d6efd;
+                position: relative;
+                display: inline-block;
+                padding-bottom: 10px;
+            }
+            .year-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60%;
+                height: 3px;
+                background: linear-gradient(to right, #0d6efd, transparent);
+            }
+
+            /* Card Body Styles */
+            .card-body {
+                padding: 1.5rem;
+                background: white;
+                border-radius: 0 0 8px 8px;
+            }
+            .card-text {
+                color: #4a5568;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            /* Modal Styles */
+            .modal-content {
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            }
+            .modal-header {
+                border-bottom: 2px solid #e9ecef;
+                padding: 1.5rem;
+                background: linear-gradient(to right, #f8f9fa, white);
+            }
+            .modal-body {
+                padding: 0;
+                background-color: #f8f9fa;
+            }
+            .modal-body img {
+                max-width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+                margin: 0 auto;
+                display: block;
+                padding: 20px;
+            }
+            .modal-dialog {
+                max-width: 1000px;
+                margin: 1.75rem auto;
+            }
+            .btn-close {
+                transition: transform 0.3s ease;
+            }
+            .btn-close:hover {
+                transform: scale(1.1);
+            }
+
+            /* Main Content Section */
+            .text-gradient {
+                background: linear-gradient(45deg, #4338ca, #c026d3);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            /* Title Animation */
+            .display-5 {
+                transition: all 0.3s ease;
+            }
+            .display-5:hover {
+                transform: scale(1.02);
+            }
+            
+            /* Responsive Adjustments */
+            @media (max-width: 768px) {
+                .carousel-item img {
+                    height: 250px;
+                }
+                .year-title {
+                    font-size: 1.5rem;
+                }
+                .modal-dialog {
+                    margin: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">My Portfolio</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="finalreport.html">Final Report</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Projects Section-->
+            <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-12 col-xl-11 col-xxl-10">
+                            <!-- First Year -->
+                            <div class="year-section">
+                                <h3 class="year-title fw-bolder">First Year Projects</h3>
+                                <!-- Game Project -->
+                                <div class="card project-card shadow border-0">
+                                    <div class="card-header bg-transparent">
+                                    </div>
+                                    <div id="firstYearCarousel" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#firstYearCarousel" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#firstYearCarousel" data-bs-slide-to="1"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-bs-toggle="modal" data-bs-target="#project1Modal1">
+                                                <img src="assets/game.jpeg" class="d-block w-100" alt="Game Project View 1">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project1Modal2">
+                                                <img src="assets/game2.jpeg" class="d-block w-100" alt="Game Project View 2">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#firstYearCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#firstYearCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">A game project showcasing fundamental programming concepts.</p>
+                                        <p class="card-text">Using a Python language.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Second Year -->
+                            <div class="year-section">
+                                <h3 class="year-title fw-bolder">Second Year Projects</h3>
+                                <div class="card project-card shadow border-0">
+                                    <div class="card-header bg-transparent">
+                                    </div>
+                                    <div id="secondYearCarousel" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#secondYearCarousel" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#secondYearCarousel" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#secondYearCarousel" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#secondYearCarousel" data-bs-slide-to="3"></button>
+                                            <button type="button" data-bs-target="#secondYearCarousel" data-bs-slide-to="4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-bs-toggle="modal" data-bs-target="#project2Modal1">
+                                                <img src="assets/2ndyearprojects/Picture1.png" class="d-block w-100" alt="E-Government Services System View 1">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project2Modal2">
+                                                <img src="assets/2ndyearprojects/Picture2.png" class="d-block w-100" alt="E-Government Services System View 2">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project2Modal3">
+                                                <img src="assets/2ndyearprojects/Picture3.png" class="d-block w-100" alt="E-Government Services System View 3">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project2Modal4">
+                                                <img src="assets/2ndyearprojects/Picture4.png" class="d-block w-100" alt="E-Government Services System View 4">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project2Modal5">
+                                                <img src="assets/2ndyearprojects/Untitled.png" class="d-block w-100" alt="E-Government Services System View 5">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#secondYearCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#secondYearCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">A mobile game developed using Xamarin C# and Android Studio, inspired by the popular "4 Pics 1 Word" concept but with a unique twist - all images are related to Information Technology. Players must guess the IT-related term that connects all four displayed images, making it both entertaining and educational for tech enthusiasts.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Third Year -->
+                            <div class="year-section">
+                                <h3 class="year-title fw-bolder">Third Year Projects</h3>
+                                <div class="card project-card shadow border-0">
+                                    <div class="card-header bg-transparent">
+                                    </div>
+                                    <div id="thirdYearCarousel" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="3"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="4"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="5"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="6"></button>
+                                            <button type="button" data-bs-target="#thirdYearCarousel" data-bs-slide-to="7"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-bs-toggle="modal" data-bs-target="#project3Modal1">
+                                                <img src="assets/3rdyeargame.jpeg" class="d-block w-100" alt="Advanced Game Project View 1">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal2">
+                                                <img src="assets/Rockpaper1.png" class="d-block w-100" alt="Rock Paper Scissors View 1">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal3">
+                                                <img src="assets/Rockpaper2.png" class="d-block w-100" alt="Rock Paper Scissors View 2">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal4">
+                                                <img src="assets/Rockpaper3.png" class="d-block w-100" alt="Rock Paper Scissors View 3">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal5">
+                                                <img src="assets/Rockpaper4.png" class="d-block w-100" alt="Rock Paper Scissors View 4">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal6">
+                                                <img src="assets/Rockpaper5.png" class="d-block w-100" alt="Rock Paper Scissors View 5">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal7">
+                                                <img src="assets/Rockpaper6.png" class="d-block w-100" alt="Rock Paper Scissors View 6">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project3Modal8">
+                                                <img src="assets/Rockpaper7.png" class="d-block w-100" alt="Rock Paper Scissors View 7">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#thirdYearCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#thirdYearCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">A vibrant, hands-on game designed for children, powered by an Arduino-based controller and a dynamic game interface built with Visual Studio Community. This engaging Rock Paper Scissors experience pits kids against a clever computer opponent, fostering motor skill development, quick decision-making, and endless fun in an interactive learning environment.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fourth Year -->
+                            <div class="year-section">
+                                <h3 class="year-title fw-bolder">Fourth Year Projects</h3>
+                                <div class="card project-card shadow border-0">
+                                    <div class="card-header bg-transparent">
+                                        <h5 class="mb-0">Mobile Health Monitoring System</h5>
+                                    </div>
+                                    <div id="fourthYearCarousel" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="0" class="active"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="1"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="2"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="3"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="4"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="5"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="6"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="7"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="8"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="9"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="10"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="11"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="12"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="13"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="14"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="15"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="16"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="17"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="18"></button>
+                                            <button type="button" data-bs-target="#fourthYearCarousel" data-bs-slide-to="19"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-bs-toggle="modal" data-bs-target="#project4Modal1">
+                                                <img src="assets/4thyearprojects/mhealth1.png" class="d-block w-100" alt="Mobile Health View 1">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal2">
+                                                <img src="assets/4thyearprojects/mhealth2.png" class="d-block w-100" alt="Mobile Health View 2">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal3">
+                                                <img src="assets/4thyearprojects/mhealth3.png" class="d-block w-100" alt="Mobile Health View 3">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal4">
+                                                <img src="assets/4thyearprojects/mhealth4.png" class="d-block w-100" alt="Mobile Health View 4">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal5">
+                                                <img src="assets/4thyearprojects/mhealth5.png" class="d-block w-100" alt="Mobile Health View 5">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal6">
+                                                <img src="assets/4thyearprojects/mhealth6.png" class="d-block w-100" alt="Mobile Health View 6">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal7">
+                                                <img src="assets/4thyearprojects/mhealth7.png" class="d-block w-100" alt="Mobile Health View 7">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal8">
+                                                <img src="assets/4thyearprojects/mhealth8.png" class="d-block w-100" alt="Mobile Health View 8">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal9">
+                                                <img src="assets/4thyearprojects/mhealth9.png" class="d-block w-100" alt="Mobile Health View 9">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal10">
+                                                <img src="assets/4thyearprojects/mhealth10.png" class="d-block w-100" alt="Mobile Health View 10">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal11">
+                                                <img src="assets/4thyearprojects/mhealth11.png" class="d-block w-100" alt="Mobile Health View 11">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal12">
+                                                <img src="assets/4thyearprojects/mhealth12.png" class="d-block w-100" alt="Mobile Health View 12">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal13">
+                                                <img src="assets/4thyearprojects/mhealth13.png" class="d-block w-100" alt="Mobile Health View 13">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal14">
+                                                <img src="assets/4thyearprojects/mhealth14.png" class="d-block w-100" alt="Mobile Health View 14">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal15">
+                                                <img src="assets/4thyearprojects/mhealth15.png" class="d-block w-100" alt="Mobile Health View 15">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal16">
+                                                <img src="assets/4thyearprojects/mhealth16.png" class="d-block w-100" alt="Mobile Health View 16">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal17">
+                                                <img src="assets/4thyearprojects/mhealth17.png" class="d-block w-100" alt="Mobile Health View 17">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal18">
+                                                <img src="assets/4thyearprojects/mhealth18.png" class="d-block w-100" alt="Mobile Health View 18">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal19">
+                                                <img src="assets/4thyearprojects/mhealth19.png" class="d-block w-100" alt="Mobile Health View 19">
+                                            </div>
+                                            <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#project4Modal20">
+                                                <img src="assets/4thyearprojects/mhealth20.png" class="d-block w-100" alt="Mobile Health View 20">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#fourthYearCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#fourthYearCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">A comprehensive mobile health monitoring system designed to track and manage patient health data in real-time. This application integrates various health metrics, user-friendly interfaces, and secure data management to provide an efficient healthcare solution.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Modals -->
+            <!-- First Year Game Project Modals -->
+            <div class="modal fade" id="project1Modal1" tabindex="-1" aria-labelledby="project1Modal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project1Modal1Label">First Year Game Project - View 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/game.jpeg" class="img-fluid" alt="First Year Game Project - View 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project1Modal2" tabindex="-1" aria-labelledby="project1Modal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project1Modal2Label">First Year Game Project - View 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/game2.jpeg" class="img-fluid" alt="First Year Game Project - View 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Year Project Modals -->
+            <div class="modal fade" id="project2Modal1" tabindex="-1" aria-labelledby="project2Modal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project2Modal1Label">E-Government Services System - View 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/2ndyearprojects/Picture1.png" class="img-fluid" alt="E-Government Services System - View 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project2Modal2" tabindex="-1" aria-labelledby="project2Modal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project2Modal2Label">E-Government Services System - View 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/2ndyearprojects/Picture2.png" class="img-fluid" alt="E-Government Services System - View 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project2Modal3" tabindex="-1" aria-labelledby="project2Modal3Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project2Modal3Label">E-Government Services System - View 3</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/2ndyearprojects/Picture3.png" class="img-fluid" alt="E-Government Services System - View 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project2Modal4" tabindex="-1" aria-labelledby="project2Modal4Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project2Modal4Label">E-Government Services System - View 4</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/2ndyearprojects/Picture4.png" class="img-fluid" alt="E-Government Services System - View 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project2Modal5" tabindex="-1" aria-labelledby="project2Modal5Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project2Modal5Label">E-Government Services System - View 5</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/2ndyearprojects/Untitled.png" class="img-fluid" alt="E-Government Services System - View 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Year Project Modals -->
+            <div class="modal fade" id="project3Modal1" tabindex="-1" aria-labelledby="project3Modal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/3rdyeargame.jpeg" class="img-fluid" alt="Third Year Game Project - View 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal2" tabindex="-1" aria-labelledby="project3Modal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper1.png" class="img-fluid" alt="Rock Paper Scissors - View 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal3" tabindex="-1" aria-labelledby="project3Modal3Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper2.png" class="img-fluid" alt="Rock Paper Scissors - View 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal4" tabindex="-1" aria-labelledby="project3Modal4Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper3.png" class="img-fluid" alt="Rock Paper Scissors - View 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal5" tabindex="-1" aria-labelledby="project3Modal5Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper4.png" class="img-fluid" alt="Rock Paper Scissors - View 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal6" tabindex="-1" aria-labelledby="project3Modal6Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper5.png" class="img-fluid" alt="Rock Paper Scissors - View 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal7" tabindex="-1" aria-labelledby="project3Modal7Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper6.png" class="img-fluid" alt="Rock Paper Scissors - View 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project3Modal8" tabindex="-1" aria-labelledby="project3Modal8Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/Rockpaper7.png" class="img-fluid" alt="Rock Paper Scissors - View 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth Year Project Modals -->
+            <div class="modal fade" id="project4Modal1" tabindex="-1" aria-labelledby="project4Modal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal1Label">Mobile Health Monitoring System - View 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth1.png" class="img-fluid" alt="Mobile Health View 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat modal structure for mhealth2 through mhealth20 -->
+            <!-- Example for mhealth2 -->
+            <div class="modal fade" id="project4Modal2" tabindex="-1" aria-labelledby="project4Modal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal2Label">Mobile Health Monitoring System - View 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth2.png" class="img-fluid" alt="Mobile Health View 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue with modals 3-20 following the same pattern -->
+            <div class="modal fade" id="project4Modal3" tabindex="-1" aria-labelledby="project4Modal3Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal3Label">Mobile Health Monitoring System - View 3</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth3.png" class="img-fluid" alt="Mobile Health View 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal4" tabindex="-1" aria-labelledby="project4Modal4Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal4Label">Mobile Health Monitoring System - View 4</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth4.png" class="img-fluid" alt="Mobile Health View 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal5" tabindex="-1" aria-labelledby="project4Modal5Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal5Label">Mobile Health Monitoring System - View 5</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth5.png" class="img-fluid" alt="Mobile Health View 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal6" tabindex="-1" aria-labelledby="project4Modal6Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal6Label">Mobile Health Monitoring System - View 6</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth6.png" class="img-fluid" alt="Mobile Health View 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal7" tabindex="-1" aria-labelledby="project4Modal7Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal7Label">Mobile Health Monitoring System - View 7</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth7.png" class="img-fluid" alt="Mobile Health View 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal8" tabindex="-1" aria-labelledby="project4Modal8Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal8Label">Mobile Health Monitoring System - View 8</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth8.png" class="img-fluid" alt="Mobile Health View 8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal9" tabindex="-1" aria-labelledby="project4Modal9Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal9Label">Mobile Health Monitoring System - View 9</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth9.png" class="img-fluid" alt="Mobile Health View 9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal10" tabindex="-1" aria-labelledby="project4Modal10Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal10Label">Mobile Health Monitoring System - View 10</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth10.png" class="img-fluid" alt="Mobile Health View 10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal11" tabindex="-1" aria-labelledby="project4Modal11Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal11Label">Mobile Health Monitoring System - View 11</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth11.png" class="img-fluid" alt="Mobile Health View 11">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal12" tabindex="-1" aria-labelledby="project4Modal12Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal12Label">Mobile Health Monitoring System - View 12</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth12.png" class="img-fluid" alt="Mobile Health View 12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal13" tabindex="-1" aria-labelledby="project4Modal13Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal13Label">Mobile Health Monitoring System - View 13</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth13.png" class="img-fluid" alt="Mobile Health View 13">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal14" tabindex="-1" aria-labelledby="project4Modal14Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal14Label">Mobile Health Monitoring System - View 14</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth14.png" class="img-fluid" alt="Mobile Health View 14">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal15" tabindex="-1" aria-labelledby="project4Modal15Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal15Label">Mobile Health Monitoring System - View 15</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth15.png" class="img-fluid" alt="Mobile Health View 15">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal16" tabindex="-1" aria-labelledby="project4Modal16Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal16Label">Mobile Health Monitoring System - View 16</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth16.png" class="img-fluid" alt="Mobile Health View 16">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal17" tabindex="-1" aria-labelledby="project4Modal17Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal17Label">Mobile Health Monitoring System - View 17</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth17.png" class="img-fluid" alt="Mobile Health View 17">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal18" tabindex="-1" aria-labelledby="project4Modal18Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal18Label">Mobile Health Monitoring System - View 18</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth18.png" class="img-fluid" alt="Mobile Health View 18">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal19" tabindex="-1" aria-labelledby="project4Modal19Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal19Label">Mobile Health Monitoring System - View 19</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth19.png" class="img-fluid" alt="Mobile Health View 19">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="project4Modal20" tabindex="-1" aria-labelledby="project4Modal20Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="project4Modal20Label">Mobile Health Monitoring System - View 20</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="assets/4thyearprojects/mhealth20.png" class="img-fluid" alt="Mobile Health View 20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action section-->
+            <section class="py-5 bg-gradient-primary-to-secondary text-white">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; 2024 Lancelot M. Abarintos. All Rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

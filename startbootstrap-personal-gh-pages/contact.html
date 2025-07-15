@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Contact - My Portfolio</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .contact-card {
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+            .contact-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 2rem;
+                padding: 1rem;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .contact-item:hover {
+                background: rgba(108, 99, 255, 0.05);
+                transform: translateX(10px);
+            }
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                background: #6C63FF;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1rem;
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .contact-item:hover .contact-icon {
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            }
+            .contact-icon::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                top: -100%;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+            .contact-item:hover .contact-icon::after {
+                top: 0;
+            }
+            .contact-icon i {
+                color: white;
+                font-size: 1.5rem;
+                transition: all 0.3s ease;
+            }
+            .contact-item:hover .contact-icon i {
+                transform: scale(1.1);
+            }
+            .contact-content {
+                transition: all 0.3s ease;
+            }
+            .contact-item:hover .contact-content {
+                transform: translateX(5px);
+            }
+            .contact-content h3 {
+                margin: 0;
+                font-size: 1.25rem;
+                color: #333;
+                margin-bottom: 0.5rem;
+                transition: all 0.3s ease;
+            }
+            .contact-item:hover .contact-content h3 {
+                color: #6C63FF;
+            }
+            .contact-content p {
+                margin: 0;
+                color: #666;
+                line-height: 1.6;
+            }
+            .social-links {
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            .social-link {
+                width: 45px;
+                height: 45px;
+                background: #6C63FF;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .social-link::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba(255,255,255,0.2), transparent);
+                top: -100%;
+                left: -100%;
+                transition: all 0.3s ease;
+            }
+            .social-link:hover {
+                transform: translateY(-5px) rotate(360deg);
+                color: white;
+                box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            }
+            .social-link:hover::before {
+                top: 0;
+                left: 0;
+            }
+            .social-link i {
+                transition: all 0.3s ease;
+            }
+            .social-link:hover i {
+                transform: scale(1.2);
+            }
+            .phone-label {
+                color: #0098DA;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            .contact-item:hover .phone-label {
+                color: #6C63FF;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">My Portfolio</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="finalreport.html">Final Report</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Contact Section -->
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Contact Me</span></h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="contact-card">
+                                <!-- Location -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                    <div class="contact-content">
+                                        <h3>Location</h3>
+                                        <p>San Pedro, Laguna, Philippines</p>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-envelope"></i>
+                                    </div>
+                                    <div class="contact-content">
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:abarintoslance@gmail.com" class="text-decoration-none text-muted">abarintoslance@gmail.com</a></p>
+                                        <p><a href="mailto:2021lmabarintos@live.mcl.edu.ph" class="text-decoration-none text-muted">2021lmabarintos@live.mcl.edu.ph</a></p>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="bi bi-telephone"></i>
+                                    </div>
+                                    <div class="contact-content">
+                                        <h3>Phone</h3>
+                                        <p><span class="phone-label">Smart:</span> +63 961 539 9811</p>
+                                        <p><span class="phone-label">Globe:</span> +63 995 973 1208</p>
+                                    </div>
+                                </div>
+
+                                <!-- Social Links -->
+                                <div class="social-links">
+                                    <a href="https://www.instagram.com/lancelottssss/" class="social-link">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/lancelot-abarintos-8b9496331/" class="social-link">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/jacklol.ph" class="social-link">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; 2024 Lancelot M. Abarintos. All Rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
